@@ -1,4 +1,5 @@
 import { BlogPosts } from 'app/components/posts'
+import { Projects } from 'app/components/projects'
 
 export default function Page() {
   return (
@@ -9,8 +10,14 @@ export default function Page() {
       <p className="mb-4">
         {`undergrad cs student, avid sports player (hockey/tennis/volleyball), casual film maker.`}
       </p>
-      <div className="my-8">
-        <h2 className="mb-8 text-xl font-semibold tracking-tighter">
+      <div className="mb-0">
+        <h2 className="mb-4 text-xl font-semibold tracking-tighter">
+          projects
+        </h2>
+        <Projects />
+      </div>
+      <div className="mb-4">
+        <h2 className="mb-4 text-xl font-semibold tracking-tighter">
           blogs
         </h2>
         <BlogPosts />
