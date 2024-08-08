@@ -10,7 +10,7 @@ export default function Page() {
       <p className="mb-4">
         {`undergrad cs student, avid sports player (hockey/tennis/volleyball), casual film maker.`}
       </p>
-      <div className="mb-0">
+      <div className="mb-4">
         <h2 className="mb-4 text-xl font-semibold tracking-tighter">
           projects
         </h2>
