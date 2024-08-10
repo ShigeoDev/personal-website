@@ -2,7 +2,7 @@ const projects = [
   {
     name: 'statify',
     description: 'a web app that shows stats for spotify',
-    link: 'statify.nigelloh.com',
+    link: 'https://statify.nigelloh.com',
   },
   {
     name: 'number neural network',
