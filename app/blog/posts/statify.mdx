@@ -1,0 +1,24 @@
+---
+title: 'statify - statistics for spotify'
+publishedAt: '2024-08-09'
+summary: 'the process of development, my thoughts throughout building it, and updates for the future'
+---
+
+Yesterday, I deployed my web app [Statify](https://statify.nigelloh.com), which once authrized, displays a user's spotify statistics. 
+
+## development and struggles
+
+The development process took a total of 4 days, much of which was spent fixing bugs when it was in production. Initially, building the look of the website was quite easy. I have gotten used to Tailwind and Next so the beginning of the project went by quickly. However figuring out how to authenticate with NextAuth took some time. Typescript and NextAuth were difficult to make work together, most likely do to my novice in the language. However after watching a few videos, I managed to make it work locally. From there, I read Spotify's documentation on their web api, which I found to be quite difficult, and fetched the users top tracks, top artists, and recent tracks. However, once deployed my website, I ran into a variety of issues.
+
+1. Forgot to add NextAuth with pnpm so there was a build error on Vercel. Very stupid mistake.
+2. Was using JWT_SECRET instead of NEXTAUTH_SECRET. Thus login wasn't working. Took a long time to figure out to read the logs on Vercel to fix the issue.
+3. Incorrect redirect URI for Spotify. Another stupid mistake, yet it took hours to fix. Kept typing http instead of https.  
+4. Fetching wasn't working in production but was working locally. I'm not entirely sure why this happens. If I had to guess, getting an access token from Spotify takes longer on production due to the website being hosted on Vercel. Thus, I was fetching before I got an access token. To fix this, I run an update on the session to trigger a dependency in the useEffect.
+
+These issues took a majority of the development time, and were not super fun to fix. However, building this project has taught me some basics of OAuth and authentication in general. It also was good practice for using hooks and state. 
+
+Currently, the app is not available for public use as my app is considered in development mode for Spotify's api. To get access, contact me at <nigelloh15@gmail.com> (limited to 25 users).
+
+## updates for the future
+
+In the future, I hope to add animations on the text using a animation library like Framer Motion. Currently, my site seems a bit bland and feels extremely static. Thus, adding animations might make it slightly more eye catching. For the dashboard, I would like to add more catagories. For example, maybe I would add controls for live playback, or maybe a karaoke mode if Spotify's api updates fast enough. However, I don't plan on implementing these things quite yet as I would like to start a new project. 
