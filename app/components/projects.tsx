@@ -10,9 +10,9 @@ const projects = [
     link: 'https://github.com/ShigeoDev/MiniGolf',
   },
   {
-    name: 'portfolio website',
-    description: 'this website',
-    link: 'https://github.com/ShigeoDev/portfolio-website',
+    name: 'statify',
+    description: 'a web app that shows stats for spotify',
+    link: 'statify.nigelloh.com',
   },
 
 ]
